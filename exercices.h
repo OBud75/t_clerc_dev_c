@@ -75,3 +75,5 @@ int compare_ints(void *a, void *b) {
     int int_b = *(int *)b;
     return (int_a > int_b) - (int_a < int_b);
 }
+
+// Une fonction main qui prouve que tout fonctionne aurait été bienvenue.
