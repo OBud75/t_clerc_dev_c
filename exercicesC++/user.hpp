@@ -19,6 +19,7 @@ class User {
         void save();
         int login(const char *raw_password);
         static User &get(int id);
+        int get_id() const { return id; }
 };
 
 #endif 

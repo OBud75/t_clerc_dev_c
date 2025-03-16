@@ -12,7 +12,12 @@ User::User(int id, Password &password):
     }
 
 void User::save() {
+    // Ce qui me dérange c'est surtout que le comentaire de présentation du
+    // fichier disant "récupération à partir du stockage persistant" est faux.
     std::cout << "Sauvegarde de l'utilisateur: ID = " << id << ", Password = " << *password << std::endl;
+    // En soit ce n'est pas bien grave de faire une fonction save qui ne fait rien.
+    // C'est même compréhensible si l'on considère que c'est un exemple (et c'est le cas).
+    // Par contre mieux vaux ne pas commenter que de mettre des commentaires faux.
 }
 
 int User::login(const char *raw_password) {
@@ -32,3 +37,8 @@ User& User::get(int id) {
     std::cout << "Récupération de l'utilisateur ID: " << id << std::endl;
     return user;
 }
+// L'utilisation de static ne convient pas ici.
+// Static signifie que la variable ne sera initialisée qu'une seule fois,
+// et que sa valeur sera conservée entre les appels de la fonction.
+// Cf dans main on peut get(1), ou get(9001) et on aura toujours
+// le même utilisateur avec le même id et le même mot de passe.

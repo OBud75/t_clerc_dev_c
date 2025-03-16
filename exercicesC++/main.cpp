@@ -15,5 +15,12 @@ int main() {
 
     retrieved_user.login("toto");
 
+
+    User &bugged = User::get(4321);
+    std::cout << "ID: " << bugged.get_id() << std::endl;
+
+    User &bugged_again = User::get(9001);
+    std::cout << "ID: " << bugged_again.get_id() << std::endl;
+
     return 0;
 }
